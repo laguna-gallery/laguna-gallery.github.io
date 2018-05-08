@@ -15,7 +15,7 @@ $(function() {
         if (target.length) {
           $('html,body').animate({
             scrollTop: target.offset().top
-          }, 1500);
+          }, 3100);
           return false;
         }
       }
@@ -41,6 +41,7 @@ $('#art-01').waypoint(function(direction) {
   document.getElementById('art-01-hide').style.opacity = 1;
   document.getElementById('navigation').style.opacity = 1;
   document.getElementById('art-01-detail').style.opacity = 1;
+  $('.fleche-wrap').css('visibility','hidden');
   }, {
    offset: 300
 });
@@ -58,7 +59,7 @@ $('#art-02').waypoint(function(direction) {
   $('#navigation ul li:nth-child(2) a').css('color','#000000');
   document.getElementById('art-02-hide').style.opacity = 1;
   document.getElementById('art-02-detail').style.opacity = 1;
-  $('.fleche-wrap').css('visibility','hidden');
+  //$('.fleche-wrap').css('visibility','hidden'); -> bug !
   }, {
    offset: 300
 });
