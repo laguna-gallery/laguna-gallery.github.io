@@ -1,0 +1,727 @@
+/* ==========================================================================
+   The Laguna Art Gallery / alfa-front.com - 2017
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #131212;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Pour customizer la selection des elements dans le site.
+ */
+
+::-moz-selection {
+    background: #e9d815;
+    text-shadow: none;
+}
+
+::selection {
+    background: #e9d815;
+    text-shadow: none;
+}
+
+/*
+ * Amelioration de la ligne horizontal par defaut.
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/* 
+ * Pour enlever l'espace parmi les images et les autres éléments HTML5
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Styles du site - CSS Coeur
+   ========================================================================== */
+
+body{
+	padding:0;
+	margin:0;
+	background:#e9d815;
+    height:100%;
+    font-family: 'GibsonLightRegular';
+    font-weight: normal;
+	font-style: normal;
+	color: #131212;
+	font-size: 62.5%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+	-webkit-text-size-adjust: 100%;
+	}
+
+html{
+	height:100%;
+	   }
+
+
+@font-face {
+    font-family: 'GibsonLightRegular';
+    src: url('../fonts/Gibson-Light-webfont.eot');
+    src: url('../fonts/Gibson-Light-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gibson-Light-webfont.woff') format('woff'),
+         url('../fonts/Gibson-Light-webfont.ttf') format('truetype'),
+         url('../fonts/Gibson-Light-webfont.svg#GibsonLightRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'GibsonLightBold';
+    src: url('../fonts/Gibson-SemiBold-webfont.eot');
+    src: url('../fonts/Gibson-SemiBold-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gibson-SemiBold-webfont.woff') format('woff'),
+         url('../fonts/Gibson-SemiBold-webfont.ttf') format('truetype'),
+         url('../fonts/Gibson-SemiBold-webfont.svg#GibsonLightBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'GibsonBold';
+    src: url('../fonts/Gibson-Bold-webfont.eot');
+    src: url('../fonts/Gibson-Bold-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gibson-Bold-webfont.woff') format('woff'),
+         url('../fonts/Gibson-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Gibson-Bold-webfont.svg#GibsonBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'GibsonRegular';
+    src: url('../fonts/Gibson-Regular-webfont.eot');
+    src: url('../fonts/Gibson-Regular-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gibson-Regular-webfont.woff') format('woff'),
+         url('../fonts/Gibson-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/Gibson-Regular-webfont.svg#GibsonRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#navigation{
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+	width: 60px;
+	text-align: center;
+	background-color: #f03e45;
+	background-color: rgba(255,255,255,0.15);
+	height: 100%;
+    opacity: 0;
+    transition: all 1s ease-in;
+    visibility: hidden;
+}
+#art-01-detail {
+	opacity: 0;
+    transition: all 1s ease-in;
+}
+.wrap-gauche,
+.wrap-droit,
+#navigation ul,
+#navigation li {
+        transition: all 1s ease-in;
+}
+
+#navigation a{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#navigation a:hover{
+	opacity: 0.7;
+}
+
+#navigation ul{
+    top: 50%;
+	display: block;
+	position: absolute;
+	margin: 0;
+	margin-top: -220px;
+	padding: 0;
+	text-align: center;
+	width: 60px;
+	height: 440px;
+}
+
+#navigation li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 160%;
+	font-family: 'GibsonBold';
+	font-weight: normal;
+    font-style: normal;
+    text-align: center;
+	
+}
+#navigation li a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    width: 100%;
+    outline: none;
+}
+p{
+	margin: 0;
+	padding: 0;
+}
+
+h1{
+   font-size: 800%;
+   font-family: 'GibsonLightBold';
+   font-weight: normal;
+   font-style: normal;
+   text-transform: uppercase;
+   margin: 0;
+   margin-bottom: 30px;
+   padding: 0;
+	
+}
+
+h2{
+   font-size: 500%;
+   line-height: 56px;
+   font-family: 'GibsonLightBold';
+   font-weight: normal;
+   font-style: normal;
+   padding: 0;
+   max-width: 500px;
+   text-align: center;
+   margin: 0 auto;
+}
+
+h3{
+	font-family: 'GibsonLightBold';
+	font-weight: normal;
+    font-style: normal;
+    font-size: 330%;
+    color: #131212;
+    line-height: 1.18181818;
+    margin-bottom: 5px;
+}
+
+.noback{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: #e9d815;
+}
+
+.noback-content{
+	width: 100%;
+	position: relative;
+	background-color: #e9d815;
+}
+
+.content {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.content p{
+	font-size: 240%;
+	line-height: 1.25;
+}
+
+
+.content-wrap{	
+	position: absolute;
+	top: 25%;
+    	padding-bottom: 200px;
+
+}
+.noback .content-wrap{
+	margin-top: 0;
+}
+.content-wrap.copie-droite {
+	right: 120px;
+	max-width: 40%;
+}
+
+.content-wrap.copie-gauche{
+	left: 60px;
+	max-width: 45%;
+}
+
+.details {
+	width: 100%;
+	height: 78px;
+	position: absolute;
+	bottom: 0;
+}
+    .wrap-gauche,
+    .wrap-droit {
+	    margin-right: 60px;
+	    background-color: rgba(0,0,0,0.3);
+	    height: 78px;
+    }
+    .wrap-droit{ text-align: right; }
+
+
+.content .annee {
+ 	font-size: 150%;
+	padding: 0;
+	margin: 0;
+ 	margin-top: 2px;
+	text-transform: uppercase;
+	font-family: 'GibsonRegular';
+	font-weight: normal;
+    font-style: normal;
+    color : #fff;
+
+}
+    .wrap-gauche .annee{ margin-left: 130px; }
+    .wrap-droit .annee{ margin-right: 130px; }
+
+.content .titre {
+ 	font-size: 250%;
+	padding: 0;
+	margin: 0;
+ 	padding-top: 11px;
+ 	color : #fff;
+}
+    .wrap-gauche .titre{ margin-left: 60px; }
+    .wrap-droit .titre{ margin-right: 60px; }
+
+.text-bold{
+	font-family: 'GibsonLightBold';
+	font-weight: normal;
+    font-style: normal;
+	text-transform: uppercase;
+	font-size: 87.5%;
+	
+}
+
+.noback .intro{
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 20%;
+}
+
+.fleche-wrap{
+    text-align: center;
+	position: fixed;
+	bottom: 60px;
+	width: 100%
+}
+
+.nav-fleche{
+	width: 60px;
+	height: 55px;
+}
+
+.contact-link{
+	text-transform: uppercase;
+}
+
+.back-1 {	background-image: url(../img/img-01.jpg);}
+.back-2 {	background-image: url(../img/img-02.jpg);}
+.back-3 {	background-image: url(../img/img-03.jpg);}
+.back-4 {	background-image: url(../img/img-04.jpg);}
+.back-5 {	background-image: url(../img/img-05.jpg);}
+.back-6 {	background-image: url(../img/img-06.jpg);}
+.back-7 {	background-image: url(../img/img-07.jpg);}
+.back-8 {	background-image: url(../img/img-08.jpg);}
+.back-9 {	background-image: url(../img/img-09.jpg);}
+
+#art-01-hide,
+#art-02-hide,
+#art-03-hide,
+#art-04-hide,
+#art-05-hide,
+#art-06-hide,
+#art-07-hide,
+#art-08-hide,
+#art-09-hide { 
+   opacity: 0;
+   transition: all 1.7s ease-out;
+}
+
+.noback-content p{
+	font-size: 240%;
+	line-height: 1.25;
+}
+
+.noback-content {
+	max-width: 1080px;
+	margin: 0 auto;
+	padding-top: 200px;
+	padding-bottom: 200px;
+	position: relative;
+}
+
+.noback-content .noback-content-wrap{
+    padding-right: 90px;
+    padding-left: 90px;
+}
+
+.nav-fleche-contact{
+	width: 40px;
+	height: 48px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.contact-link a{
+    color: #ffffff;
+	text-decoration: none;
+	font-family: 'GibsonLightBold';
+	font-weight: normal;
+    font-style: normal;
+}
+
+.contact-link a:hover{
+   opacity: 0.7;
+}
+
+.galerie-logo-wrap {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+	width: 100%;
+}
+
+.galerie-logo {
+	width: 422px;
+	max-width: 100%;
+	margin: 0 auto;
+	height: auto;
+}
+
+#footer {
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+	background-color: #131212;
+	margin: 0 auto;
+	height: 50px;
+	width: 100%;
+	padding-bottom: 15px;
+}
+
+/*
+ * Clearfix: Amelioration des éléments flottants
+ */
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+@media screen and (max-width: 1024px) { 
+
+	.content-wrap.copie-droite {
+		right: 80px;
+		max-width: 55%;
+	}
+
+	.content-wrap.copie-gauche{
+		left: 80px;
+		max-width: 55%;
+	}
+	.content-wrap {
+	    top: 15%;
+	}
+	.content {
+		background-attachment: scroll;
+	}
+}
+
+
+@media screen and (max-width: 800px) { 
+
+	h1,
+	h2 {
+	    font-size: 330%;
+	}
+
+	.noback-content  {
+	    padding: 120px 0;
+
+	}
+	.content-wrap {
+	    top: 10%;
+	}
+}
+
+
+@media screen and (max-width: 640px) { 
+	h1,
+	h2 {
+	    font-size: 330%;
+	}
+
+	#navigation ul{
+		margin-top: -160px;
+		height: 335px;
+	}
+
+	#navigation li a {
+		height: 35px;
+		line-height: 35px;
+	}
+	#navigation,
+	#navigation ul {
+	    width: 35px;
+	}
+	.wrap-gauche,
+	.wrap-droit {
+	    margin-right: 35px;
+	}
+
+	.content {
+		min-height: 100%;
+		height: auto ;
+	}
+
+	.content-wrap.copie-droite {
+		left: 100px;
+		right: 80px;
+		max-width:none;
+	}
+
+	.content-wrap.copie-gauche{
+		left: 40px;
+		right: 160px;
+		max-width: none;
+	}
+	.noback-content  {
+	    padding: 70px 0;
+
+	}
+	.noback-content .noback-content-wrap {
+	    padding: 0 20px;
+	}
+	.noback-content-wrap p,
+	.noback-content-wrap h3
+	{
+	  	position: relative;
+		top: auto;
+		left: auto;
+		right: auto;
+		
+		width: auto;
+		margin-right: 55px;
+		text-align: left !important;
+	}
+	.galerie-logo-wrap {
+	    width: 100%;
+		height: auto;
+
+	}
+
+	.galerie-logo {
+		width: 60%;
+		height: 60%;
+	}
+
+	#footer p {
+	font-size: 12px;
+	text-align: center !important;
+	margin: 0 auto;
+	padding-bottom: 5px;
+	}
+}
+
+@media screen and (max-width: 480px) { 
+	h1{
+	   font-size: 330%;
+	   margin-bottom: 10px;
+	}
+	h2 {
+	    font-size: 200%;
+	}
+	.fleche-wrap {
+	    bottom: 30px;
+	}
+	.noback .intro {
+	    top: 15%;
+	}
+	.noback-content  {
+	    padding: 40px 0;
+
+	}
+
+	#art-01-hide,
+	#art-02-hide,
+	#art-03-hide,
+	#art-04-hide,
+	#art-05-hide,
+	#art-06-hide,
+	#art-07-hide,
+	#art-08-hide,
+	#art-09-hide { 
+	    opacity: 1 !important;
+	}
+
+	.details {
+	    height: auto;
+	}
+	.wrap-gauche,
+	.wrap-droit {
+	     height: auto;
+	     padding-bottom: 14px;
+	   
+	}
+	.content .titre {
+	    line-height: 1.1;
+	    margin-bottom: 9px;
+	}
+	.text-bold {
+	    display: inline-block;
+	    
+	}
+
+	.wrap-droit,
+	.wrap-gauche {
+	    left: 0;
+	    right: 0;
+	    text-align: left;
+	}
+	.wrap-gauche .titre,
+	.wrap-droit .titre {
+	    left: 0 !important;
+	    right: 0 !important;
+	    margin-left: 20px !important;
+	    margin-right: 20px !important;
+	}
+	.wrap-gauche .annee,
+	.wrap-droit .annee {
+	    left: 0 !important;
+	    right: 0 !important;
+	    margin-left: 20px !important;
+	    margin-right: 20px !important;
+	}
+
+	.content-wrap.copie-gauche,
+	.content-wrap.copie-droite {
+		position: relative;
+		top: auto;
+		left: auto;
+		right: auto;
+		
+		width: auto;
+		margin-right: 55px;
+		margin-left: 20px;
+		text-align: left !important;
+		
+		margin-top: 30px;
+	    	padding-bottom: 200px;
+
+	}
+	 
+	#art-01,
+	#art-03,
+	#art-05,
+	#art-07,
+	#art-09 {
+	    background-position: 40% 50%;
+	}
+
+	#art-02,
+	#art-04,
+	#art-06,
+	#art-08 {
+	    background-position: 60% 50%;
+	}
+
+	.nav-fleche {
+	    width: 15%;
+	    height: 15%;
+	}
+
+	.content-wrap h2,
+	.noback-content-wrap h2 {
+	     font-size: 240% !important;
+	     line-height: 1.2;
+	     padding: 0 20px;
+	  
+	}
+	.content h3,
+	.noback-content-wrap h3 {
+	    font-size: 240% !important;
+	    line-height: 1.1;
+	}
+	.noback-content-wrap p,
+	.content p {
+	    font-size: 200%;
+		line-height: 1.2;
+	}
+	.content .titre {
+	    font-size: 160%;
+	}
+	.content .annee {
+	    font-size: 100%;
+	}
+	.noback-content-wrap p,
+	.noback-content-wrap h3
+	{
+	  	position: relative;
+		top: auto;
+		left: auto;
+		right: auto;
+		
+		width: auto;
+		margin-right: 30px;
+		text-align: left !important;
+	}
+}
